@@ -8,15 +8,18 @@ import {
 } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import Animated, { useSharedValue } from 'react-native-reanimated';
+// @ts-ignore
 import RefreshableWrapper from 'react-native-elastic-view';
 import EmptyComponent from './components/EmptyComponent';
 import ListItem from './components/ListItem';
 import DefaultLoader from './components/DefaultLoader';
 
 type Item = string;
+// @ts-ignore
+const AnimatedFlatlist = Animated.createAnimatedComponent<FlatListProps<Item>>(FlatList);
 
-const AnimatedFlatlist =
-  Animated.createAnimatedComponent<FlatListProps<Item>>(FlatList);
+// @ts-ignore
+const AnimatedFlatlistComp = (props: any) => <AnimatedFlatlist {...props} />;
 
 const { width } = Dimensions.get('screen');
 
@@ -25,7 +28,7 @@ const data: Item[] = ['1', '2', '3', '4', '5', '6'];
 export default function App() {
   const contentOffset = useSharedValue(0);
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
-  const [listData, setListData] = React.useState<string[]>([]);
+  const [listData, setListData] = React.useState<string[]>(data);
 
   const refreshSimulationHandler = () => {
     setListData([]);
@@ -42,18 +45,16 @@ export default function App() {
         <View style={styles.header} />
         <RefreshableWrapper
           contentOffset={contentOffset}
-          Loader={() => <DefaultLoader />}
+          Loader={() => <></>}
           isLoading={isLoading}
-          onRefresh={() => {
-            refreshSimulationHandler();
-          }}
+          onRefresh={() => {}}
         >
-          <AnimatedFlatlist
+          <AnimatedFlatlistComp
             data={listData}
             bounces={false}
             keyExtractor={(item: string) => item}
-            renderItem={({ item }) => {
-              return <ListItem item={item} />;
+            renderItem={(props: any) => {
+              return <ListItem item={props.item} />;
             }}
             style={styles.scrollList}
             contentContainerStyle={styles.contenContainer}
@@ -83,7 +84,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingBottom: 100,
     alignItems: 'center',
-    backgroundColor:"white"
+    backgroundColor: 'white',
   },
   scrollList: { width, paddingTop: 0 },
 });
