@@ -1,16 +1,16 @@
-# react-native-fresh-refresh
+# react-native-elastic-view
 
 > Custom pull to refresh Component
 
 <br>
 
-<img width="300" src="https://github.com/4TWIGGERS/react-native-fresh-refresh/blob/main/gif/fresh.png">
+<img width="300" src="https://github.com/joaosouz4dev/react-native-elastic-view/blob/main/gif/fresh.png">
 
 ## Note ❗
 
 `react-native-gesture-handler` supported by Expo 44 has a bug which breaks fresh refresh
 
-If you are using `react-native-gesture-handler` version below 2 please install `react-native-fresh-refresh` 1.1.0
+If you are using `react-native-gesture-handler` version below 2 please install `react-native-elastic-view` 1.1.0
 
 <br>
 
@@ -23,13 +23,13 @@ If you are using `react-native-gesture-handler` version below 2 please install `
 Use `yarn`
 
 ```sh
-yarn add react-native-fresh-refresh
+yarn add react-native-elastic-view
 ```
 
 or `npm`
 
 ```sh
-npm i -S react-native-fresh-refresh
+npm i -S react-native-elastic-view
 ```
 
 ## Prerequisites
@@ -39,7 +39,7 @@ You are going to need to have `react-native-reanimated` v2 and `react-native-ges
 ## Step 2
 
 ```jsx
-import RefreshableWrapper from 'react-native-fresh-refresh';
+import RefreshableWrapper from 'react-native-elastic-view';
 ```
 
 ## Step 3
@@ -90,7 +90,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, FlatList, Dimensions } from 'react-native';
 import Animated from 'react-native-reanimated';
-import RefreshableWrapper from 'react-native-fresh-refresh';
+import RefreshableWrapper from 'react-native-elastic-view';
 import LottieView from 'lottie-react-native';
 
 const AnimatedFlatlist = Animated.createAnimatedComponent(FlatList);
@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
 });
 ```
 
-<img width="300" src="https://github.com/4TWIGGERS/react-native-fresh-refresh/blob/main/gif/refresh.gif">
+<img width="300" src="https://github.com/joaosouz4dev/react-native-elastic-view/blob/main/gif/refresh.gif">
 
 ## Tips
 
@@ -186,4 +186,4 @@ const styles = StyleSheet.create({
 
 ## Hire us
 
-Contact us at hello@4twiggers.com
+Contact us at hello@joaosouz4dev.com

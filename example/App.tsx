@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import Animated, { useSharedValue } from 'react-native-reanimated';
-import RefreshableWrapper from 'react-native-fresh-refresh';
+import RefreshableWrapper from 'react-native-elastic-view';
 import EmptyComponent from './components/EmptyComponent';
 import ListItem from './components/ListItem';
 import DefaultLoader from './components/DefaultLoader';
